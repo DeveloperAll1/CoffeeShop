@@ -1,0 +1,167 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html {
+    font-size: 62.5%;
+}
+body {
+    font-size: 1.6rem;
+}
+.font {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("pictures/AllSlide.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    min-height: 100vh;
+    width: 100%;
+}
+header {
+    display: flex;
+    padding-top: 1rem;
+    padding-left: 8rem;
+    align-items: center;
+    gap: 25.7rem;
+}
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+}
+.logo-text {
+    color: white;
+    font-family: Perpetua, Georgia, serif;
+    font-size: 2.4rem;
+    font-weight: 700;
+    padding-top: 2rem;
+}
+nav {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+}
+nav a {
+    text-decoration: none;
+    color: white;
+    font-family: Poppins, Arial, sans-serif;
+    font-size: 2.4rem;
+    font-weight: 600;
+    transition: color 0.5s ease;
+}
+nav a:hover {
+    color: blue;
+}
+h1 {
+    font-family: Poppins, Arial, sans-serif;
+    font-size: 7.2rem;
+    font-weight: 700;
+    color: white;
+    margin-top: 20rem;
+    margin-left: 8rem;
+    max-width: 65rem;
+    line-height: 1.2;
+}
+h2 {
+    color: white;
+    margin-left: 8.2rem;
+    margin-top: 1rem;
+    font-size: 2.4rem;
+}
+.btn {
+    text-decoration: none;
+    display: inline-block;
+    width: 30rem;
+    height: 8rem;
+    color: white;
+    background-color: #B68C4D;
+    border-radius: 70px;
+    text-align: center;
+    line-height: 8rem;
+    margin-left: 8rem;
+    margin-top: 5.3rem;
+    font-family: Poppins, Arial, sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+}
+#burger, .burger-btn {
+    display: none;
+}
+@media (max-width: 768px) {
+    h1 {
+        margin-left: 2rem;
+        font-size: 3.2rem;
+    }
+    h2 {
+        margin-left: 2rem;
+        font-size: 1.8rem;
+    }
+    .btn {
+        display: block;
+        margin: 0 auto;
+        margin-top: 10rem;
+    }
+    header {
+        position: relative;
+        justify-content: space-between;
+        padding-left: 2rem;
+    }
+    .burger-btn {
+        display: flex;
+        position: relative;
+        align-items: center;
+        cursor: pointer;
+        z-index: 10;
+        width: 3rem;
+        height: 3rem;
+        margin-right: 2.5rem;
+        margin-bottom: 2rem;
+    }
+    .burger-btn span, .burger-btn::before, .burger-btn::after {
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background-color: white;
+    }
+    .burger-btn::before {
+        content: "";
+        top: 3.5px;
+    }
+    .burger-btn span {
+        top: 14px;
+    }
+    .burger-btn::after {
+        content: "";
+        bottom: 3.5px;
+    }
+    nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        z-index: 5;
+        background-color: #97d507;
+    }
+    nav a {
+        display: block;
+        text-align: center;
+        padding: 1rem 2rem;
+        margin: 0 !important;
+    }
+    .burger-checkbox:checked ~ nav {
+        display: flex;
+    }
+    .burger-checkbox:checked ~ .burger-btn span {
+        transform: scale(0);
+    }
+    .burger-checkbox:checked ~ .burger-btn::before {
+        transform: rotate(45deg);
+        top: 14px;
+    }
+    .burger-checkbox:checked ~ .burger-btn::after {
+        transform: rotate(-45deg);
+        bottom: 14px;
+    }
+}
