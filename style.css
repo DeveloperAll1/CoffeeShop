@@ -87,19 +87,23 @@ h2 {
 #burger, .burger-btn {
     display: none;
 }
-@media (max-width: 768px) {
+@media (max-width: 992px) {
     h1 {
-        margin-left: 2rem;
+        width: 100%;
+        margin: 20rem 0 1rem 0;
+        padding: 0 2rem;
         font-size: 3.2rem;
+
     }
     h2 {
-        margin-left: 2rem;
+        width: 100%;
+        margin: 0 0 13rem 0;
+        padding: 0 2.2rem;
         font-size: 1.8rem;
     }
     .btn {
         display: block;
         margin: 0 auto;
-        margin-top: 10rem;
     }
     header {
         position: relative;
@@ -108,14 +112,15 @@ h2 {
     }
     .burger-btn {
         display: flex;
-        position: relative;
+        position: absolute;
         align-items: center;
         cursor: pointer;
         z-index: 10;
         width: 3rem;
         height: 3rem;
-        margin-right: 2.5rem;
-        margin-bottom: 2rem;
+        margin: 0;
+        top: 3rem;
+        right: 2rem;
     }
     .burger-btn span, .burger-btn::before, .burger-btn::after {
         position: absolute;
@@ -125,14 +130,14 @@ h2 {
     }
     .burger-btn::before {
         content: "";
-        top: 3.5px;
+        top: 3px;
     }
     .burger-btn span {
         top: 14px;
     }
     .burger-btn::after {
         content: "";
-        bottom: 3.5px;
+        bottom: 3px;
     }
     nav {
         display: none;
@@ -163,5 +168,10 @@ h2 {
     .burger-checkbox:checked ~ .burger-btn::after {
         transform: rotate(-45deg);
         bottom: 14px;
+    }
+}
+@media (min-width: 769px) {
+    .btn {
+        margin-left: 5rem;
     }
 }
